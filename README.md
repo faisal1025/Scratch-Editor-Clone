@@ -21,7 +21,7 @@ To get started:
   src="./assets/scratch-demo-2.png"
   alt="Alt text"
   title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 100%">
+  style="display: inline-block; margin: 0 auto; max-width: 100%">
 
 - We can select a sprite by clicking on it.
 - Sprite can be deleted along with its actions
@@ -32,7 +32,7 @@ To get started:
   src="./assets/scratch-demo-3.png"
   alt="Alt text"
   title="Optional title"
-  style="display: inline-block; margin: 0 auto; width: 100%">
+  style="display: inline-block; margin: 0 auto; max-width: 100%">
 
 - All the actions may not implemented. I have implemented some sample actions like that we can implement other actions also.
 - Drag the action back to the action menu to delete it.
