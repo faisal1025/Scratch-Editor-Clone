@@ -8,9 +8,9 @@ export default function PreviewArea() {
   const dispatch = useDispatch();
   
   return (
-    <div className="flex justify-center items-center h-full overflow-y-auto p-2S relative">
+    <div className="flex justify-center items-center h-full p-2S relative">
       {
-        sprites.map(sprite=>{
+        sprites?.map(sprite=>{
           return(
             <RenderSprite sprite={sprite} />
           )

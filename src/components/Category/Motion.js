@@ -4,7 +4,7 @@ import RenderItem from '../RenderItem';
 
 const Motion = ({motionItems}) => {
 
-    const Items = motionItems.motionItems
+    const Items = motionItems.items
     const bgClass = motionItems.bgClass
     console.log(Items);
     return (

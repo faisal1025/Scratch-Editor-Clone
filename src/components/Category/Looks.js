@@ -3,7 +3,7 @@ import Icon from '../Utility/Icon'
 import RenderItem from '../RenderItem'
 
 const Looks = ({looksItems}) => {
-    const Items = looksItems.looksItems
+    const Items = looksItems.items
     const bgColor = looksItems.bgClass
     return (
         

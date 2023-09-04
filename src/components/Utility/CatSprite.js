@@ -26,7 +26,7 @@ export default function CatSprite({id}) {
     var tempX = e.clientX-currSprite.offset_x
     var tempY = e.clientY-currSprite.offset_y
     // x: 349, y: 319
-    if (tempX >= 0 && tempX < 359 && tempY >= 0 && tempY < 325) {
+    if (tempX >= 0 && tempX < 370 && tempY >= 0 && tempY < 325) {
         dispatch(changePosition({
           id: id,
           x: tempX,
@@ -37,13 +37,14 @@ export default function CatSprite({id}) {
     
   const handleMouseUp = () => {
     setIsDragging(false);
+    console.log(currSprite.position_x, currSprite.position_y);
   };
   return (
       <svg 
         xmlns="http://www.w3.org/2000/svg"
         width="95.17898101806641"
         height="100.04156036376953"
-        id="catSvg"
+        id={`catSvg${id}`}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}

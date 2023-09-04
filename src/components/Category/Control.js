@@ -2,7 +2,7 @@ import React from 'react'
 import RenderItem from '../RenderItem'
 
 const Control = ({controlItems}) => {
-    const Items = controlItems.controlItems
+    const Items = controlItems.items
     const bgColor = controlItems.bgClass
     console.log(Items);
     return (

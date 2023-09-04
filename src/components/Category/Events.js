@@ -2,7 +2,7 @@ import React from 'react'
 import RenderItem from '../RenderItem'
 
 const Events = ({eventsItems}) => {
-    const Items = eventsItems.eventsItems
+    const Items = eventsItems.items
     const bgClass = eventsItems.bgClass
     return (
         <div>
