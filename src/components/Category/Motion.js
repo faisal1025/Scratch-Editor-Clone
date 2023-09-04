@@ -1,5 +1,4 @@
 import React from 'react'
-import Icon from '../Utility/Icon'
 import RenderItem from '../RenderItem';
 
 const Motion = ({motionItems}) => {

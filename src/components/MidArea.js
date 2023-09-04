@@ -1,5 +1,4 @@
 import React from "react";
-import RenderItem from "./RenderItem";
 import { useSelector, useDispatch } from "react-redux";
 import { addAction } from "../sprit/spritSlice";
 import MovableItem from "./Utility/MovableItem";

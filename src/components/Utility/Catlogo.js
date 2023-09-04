@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Catlogo({id}) {
-  const currSprite = useSelector((state) => state.sprite.sprites[id])
 
   return (
       <svg 

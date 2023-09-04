@@ -2,7 +2,6 @@ import React from 'react'
 import Icon from '../Utility/Icon'
 import { useDispatch, useSelector } from 'react-redux'
 import { add, changeSelectedSprite, remove } from '../../sprit/spritSlice'
-import CatSprite from '../Utility/CatSprite'
 import Catlogo from '../Utility/Catlogo'
 
 const SpritManager = () => {

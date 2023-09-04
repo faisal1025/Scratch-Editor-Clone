@@ -6,9 +6,8 @@ const MovableItem = ({id, item, bgColor, spriteId}) => {
   const sprite = useSelector((store)=>store.sprite.sprites[spriteId])
   const spriteAction = sprite?.actions[id];
   const dispatch = useDispatch()
+  
   const [isDragging, setIsDragging] = useState(false);
-  // const [position, setPosition] = useState({ x: spriteAction?.position_x, y: spriteAction?.position_y });
-  // const [offset, setOffset] = useState({ x: spriteAction?.offset_x, y: spriteAction?.offset_y });
 
   const handleMouseDown = (e) => {
     e.preventDefault();

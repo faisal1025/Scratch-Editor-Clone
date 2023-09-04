@@ -1,8 +1,6 @@
 import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
-import DraggableItem from '../Model/DraggableItem'
-import CatSprite from '../components/Utility/CatSprite'
-import SpriteDomain from '../Model/SpriteDomain'
+
 
 
 const initialState = {

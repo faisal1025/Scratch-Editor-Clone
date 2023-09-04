@@ -1,7 +1,6 @@
 import React from "react";
 import Looks from "./Category/Looks";
 import Motion from "./Category/Motion";
-import DraggableItem from "../Model/DraggableItem";
 import Events from "./Category/Events";
 import Control from "./Category/Control";
 import { useSelector } from "react-redux";

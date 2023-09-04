@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import DraggableItem from '../Model/DraggableItem';
-import MovableItem from './Utility/MovableItem';
 
 const RenderItem = ({Item, bgColor}) => {
 

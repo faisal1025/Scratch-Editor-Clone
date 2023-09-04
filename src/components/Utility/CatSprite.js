@@ -5,9 +5,7 @@ import { changeOffset, changePosition, changeSelectedSprite } from "../../sprit/
 export default function CatSprite({id}) {
   var currSprite = useSelector((state) => state.sprite.sprites[id])
   const dispatch = useDispatch();
-  // console.log("this is the position", X, Y);
-  // const [position, setPosition] = useState({ x: currSprite.position_x, y: currSprite.position_y });
-  // const [offset, setOffset] = useState({ x: currSprite.offset_x, y: currSprite.offset_y });
+  
   const [isDragging, setIsDragging] = useState(false);
   
   const handleMouseDown = (e) => {
