@@ -1,7 +1,7 @@
 import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 import Icon from '../components/Utility/Icon'
-import {changePosition} from '../sprit/spritSlice'
+import {changePosition, moveAntiClock, moveClock, setVisible} from '../sprit/spritSlice'
 
 
 
@@ -31,7 +31,17 @@ const initialState = {
                         Turn <Icon name="undo" size={15} className="text-white mx-2" /> 15 degrees
                     </>,
                 category: 0,
-                action: ()=> {console.log('This is turn')}
+                action: (sprite, dispatch)=> {
+                    console.log('This is turn')
+                    var svg = document.getElementById(`catSvg${sprite.Id}`)
+                    if (svg) {
+                        svg.style.transform = `rotate(${sprite.degree-15}deg)`;
+                    }
+                    dispatch(moveAntiClock({
+                        id: sprite.Id,
+                        degree: sprite.degree-15
+                    }))
+                }
             },
             {
                 id: 2,
@@ -39,7 +49,17 @@ const initialState = {
                     Turn <Icon name="redo" size={15} className="text-white mx-2" /> 15 degrees
                     </>,
                 category: 0,
-                action: ()=> {console.log('This is turn')}
+                action: (sprite, dispatch)=> {
+                    console.log('This is turn')
+                    var svg = document.getElementById(`catSvg${sprite.Id}`)
+                    if (svg) {
+                        svg.style.transform = `rotate(${sprite.degree+15}deg)`;
+                    }
+                    dispatch(moveClock({
+                        id: sprite.Id,
+                        degree: sprite.degree+15
+                    }))
+                }
             }
             ]
         },
@@ -60,23 +80,43 @@ const initialState = {
                         set size to <input className="rounded" value={"100%"} style={{width:'1rem', marginLeft:4}} />
                     </>,
                 category: 1,
-                action: ()=> {console.log('This is turn')}
+                action: () => {console.log('This is turn')}
             },
             {
                 id: 2,
                 title: <>
-                    show
+                        show
                     </>,
                 category: 1,
-                action: ()=> {console.log('This is turn')}
+                action: (sprite, dispatch) => {
+                    console.log('This is turn')
+                    var svg = document.getElementById(`catSvg${sprite.Id}`)
+                    if(svg){
+                        svg.style.display = 'block';
+                    }
+                    dispatch(setVisible({
+                        id: sprite.Id,
+                        visible: 'block'
+                    }))
+                }
             },
             {
                 id: 3,
                 title: <>
-                    hide
+                        hide
                     </>,
                 category: 1,
-                action: ()=> {console.log('This is turn')}
+                action: (sprite, dispatch)=> {
+                    console.log('This is turn')
+                    var svg = document.getElementById(`catSvg${sprite.Id}`)
+                    if(svg){
+                        svg.style.display = 'none';
+                    }
+                    dispatch(setVisible({
+                        id: sprite.Id,
+                        visible: 'none'
+                    }))
+                }
             }
             ]
         },

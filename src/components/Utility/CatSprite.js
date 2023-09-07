@@ -50,7 +50,7 @@ export default function CatSprite({id}) {
         viewBox="0.3210171699523926 0.3000000357627869 95.17898101806641 100.04156036376953"
         version="1.1"
         xmlSpace="preserve"
-        style={{ cursor: 'pointer', position: 'absolute', top: `${currSprite.position_y}px`, left: `${currSprite.position_x}px` }}
+        style={{ cursor: 'pointer', position: 'absolute', top: `${currSprite?.position_y}px`, left: `${currSprite?.position_x}px` }}
       >
         <g>
           <g id="Page-1" stroke="none" fillRule="evenodd">

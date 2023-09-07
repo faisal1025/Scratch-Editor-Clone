@@ -13,7 +13,9 @@ const initialState = {
             position_x: 0,
             position_y: 0,
             offset_x: 0,
-            offset_y: 0
+            offset_y: 0,
+            degree: 0,
+            visible: 'block'
         }
     ]
 }
@@ -30,7 +32,10 @@ export const spritSlice = createSlice({
                                     position_x: 0,
                                     position_y: 0,
                                     offset_x: 0,
-                                    offset_y: 0}],
+                                    offset_y: 0,
+                                    degree: 0,
+                                    visible: 'block'
+                            }],
                 count: state.count + 1,
             };
         },
@@ -40,6 +45,10 @@ export const spritSlice = createSlice({
                 state.sprites.pop()
             }else{
                 state.sprites.splice(index, index)
+                var len = state.sprites.length
+                for(var i = index; i < len; i++){
+                    state.sprites[i].Id = i
+                }
             }
             state.count -= 1
         },
@@ -62,12 +71,25 @@ export const spritSlice = createSlice({
             state.sprites[action.payload.spriteId].actions[action.payload.Id].offset_x = action.payload.x
             state.sprites[action.payload.spriteId].actions[action.payload.Id].offset_y = action.payload.y
         },
+        moveAntiClock: (state, action) => {
+            state.sprites[action.payload.id].degree = action.payload.degree
+        },
+        moveClock: (state, action) => {
+            state.sprites[action.payload.id].degree = action.payload.degree
+        },
+        setVisible: (state, action) => {
+            state.sprites[action.payload.id].visible = action.payload.visible
+        },
         removeAction: (state, action) => {
             var index = action.payload.id
             if(state.sprites[state.selected].actions.length == 1){
                 state.sprites[state.selected].actions.pop()
             }else{
                 state.sprites[state.selected].actions.splice(index, index)
+                var len = state.sprites[state.selected].actions.length
+                for(var i = index; i < len; i++){
+                    state.sprites[state.selected].actions[i].id = i
+                }
             }
         },
         changePosition: (state, action) => {
@@ -96,7 +118,10 @@ export const {
     changePosition,
     changeOffset,
     changeActionPosition,
-    changeActionOffset
+    changeActionOffset,
+    moveAntiClock,
+    moveClock,
+    setVisible
 } = spritSlice.actions
 
 export default spritSlice.reducer
